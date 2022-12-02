@@ -6,4 +6,5 @@ This repo has the custome helm charts I have created for my homelab uses. These 
 
 | Chart       | Description                                                          |
 | ----------- | -------------------------------------------------------------------- |
+| Jackett     | API Support for your favorite torrent trackers                       |
 | Pirate Ship | A fully managed deployment for -arr apps and supporting applications |
