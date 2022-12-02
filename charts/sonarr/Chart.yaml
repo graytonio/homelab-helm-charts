@@ -1,0 +1,20 @@
+---
+apiVersion: v2
+appVersion: v0.20.1316
+description: Smart PVR for newsgroup and bittorrent users
+name: sonarr
+version: 16.3.2
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - sonarr
+  - torrent
+  - usenet
+home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/sonarr
+icon: https://github.com/Sonarr/Sonarr/blob/phantom-develop/Logo/512.png?raw=true
+sources:
+  - https://github.com/Sonarr/Sonarr
+  - https://github.com/k8s-at-home/container-images
+dependencies:
+- name: common
+  version: 1.1.1
+  repository: https://bjw-s.github.io/helm-charts/

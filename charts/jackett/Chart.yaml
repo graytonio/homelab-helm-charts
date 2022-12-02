@@ -1,0 +1,19 @@
+---
+apiVersion: v2
+appVersion: 0.20.2309
+description: API Support for your favorite torret trackers
+name: jackett
+version: 11.7.2
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - jackett
+  - torrent
+home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/jackett
+icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/jackett-banner.png
+sources:
+  - https://github.com/Jackett/Jackett
+  - https://github.com/k8s-at-home/container-images
+dependencies:
+- name: common
+  version: 1.1.3
+  repository: https://bjw-s.github.io/helm-charts/

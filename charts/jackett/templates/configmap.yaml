@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: scripts
+data:
+{{ (.Files.Glob "scripts/init-jackett.sh").AsConfig | indent 2 }}
