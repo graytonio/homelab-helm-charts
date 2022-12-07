@@ -1,0 +1,19 @@
+---
+apiVersion: v2
+appVersion: 3.00-r6-ls144
+description: Transmission is a cross-platform BitTorrent client
+name: transmission
+version: 8.4.3
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - transmission
+  - torrent
+home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/transmission
+icon: https://raw.githubusercontent.com/transmission/transmission/main/extras/transmission-1920.jpg
+sources:
+  - https://github.com/transmission/transmission
+  - https://github.com/k8s-at-home/container-images
+dependencies:
+- name: common
+  version: 1.1.3
+  repository: https://bjw-s.github.io/helm-charts/

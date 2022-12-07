@@ -9,5 +9,15 @@ global:
 {{- end -}}
 {{- $_ := mergeOverwrite .Values (include "jackett.hardcodedValues" . | fromYaml) -}}
 
+# Convert indexer config to sidecar parameters
+{{- define "jackett.initConfig" -}}
+{{ if .Values.config.indexers }}
+additionalContainers:
+  config-manager:
+    args: ["/scripts/init-jackett.sh", {{ join "," .Values.config.indexers }}]
+{{ end }}
+{{- end -}}
+{{- $_ := mergeOverwrite .Values (include "jackett.initConfig" . | fromYaml) -}}
+
 {{/* Render the templates */}}
 {{ include "bjw-s.common.loader.generate" . }}

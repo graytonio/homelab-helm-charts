@@ -32,4 +32,4 @@ helm install jackett homelab-charts/jackett
 | ingress.main                           | object   | See values.yaml                                                                   | Enable and configure ingress settings for the chart under this key. |
 | persistence                            | object   | See values.yaml                                                                   | Configure persistence settings for the chart under this key.        |
 | service                                | object   | See values.yaml                                                                   | Configures service settings for the chart.                          |
-| additionalContainers.add-trackers.args | string[] | `"["/scripts/init-jackett.sh", "badasstorrents", "1337x", "kickasstorrents-ws"]"` | Configure which trackers are added on startup                       |
+| config.indexers | string[] | `empty` | Configure which trackers are added on startup                       |

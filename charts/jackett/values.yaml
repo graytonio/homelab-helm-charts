@@ -20,18 +20,20 @@ service:
       http:
         port: 9117
 
-# TODO Have actual values entry for torrents to setup
 additionalContainers: 
-  add-trackers:
-    name: init-trackers
+  config-manager:
+    name: config-manager
     image: alpine:latest
     command: ["/bin/sh"]
-    args: ["/scripts/init-jackett.sh", "badasstorrents", "1337x", "kickasstorrents-ws"]
+    args: ["/scripts/init-jackett.sh"]
     volumeMounts:
       - name: config
         mountPath: /config
       - name: scripts
         mountPath: /scripts
+
+config:
+  indexers:
 
 ingress:
   # -- Enable and configure ingress settings for the chart under this key.
