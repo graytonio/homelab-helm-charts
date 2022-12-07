@@ -3,7 +3,7 @@ apiVersion: v2
 appVersion: 0.20.2309
 description: API Support for your favorite torret trackers
 name: jackett
-version: 11.7.2
+version: 1.0.0
 kubeVersion: ">=1.16.0-0"
 keywords:
   - jackett
