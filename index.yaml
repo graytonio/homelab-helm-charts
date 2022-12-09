@@ -46,6 +46,53 @@ entries:
     urls:
     - https://github.com/graytonio/homelab-helm-charts/releases/download/nzbget-1.0.0/nzbget-1.0.0.tgz
     version: 1.0.0
+  pirate-ship:
+  - apiVersion: v2
+    appVersion: v0.0.1
+    created: "2022-12-09T17:03:50.111326148Z"
+    dependencies:
+    - condition: radarr.enabled
+      name: radarr
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    - condition: sonarr.enabled
+      name: sonarr
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    - name: transmission
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    - condition: nzbget.enabled
+      name: nzbget
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    - condition: radarr.enabled,sonarr.enabled
+      name: prowlarr
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    description: Fully managed -arr app deployment
+    digest: b619266a144b3896b1ec6f5246c8424eeaebc8f61ee2ed36e5fb67ab5bffcbe5
+    home: https://github.com/graytonio/homelab-helm-charts/tree/main/charts/pirate-ship
+    keywords:
+    - jackett
+    - radarr
+    - sonarr
+    - transmission
+    - nzbget
+    - torrent
+    - usenet
+    kubeVersion: '>=1.16.0-0'
+    name: pirate-ship
+    sources:
+    - https://github.com/Jackett/Jackett
+    - https://github.com/Sonarr/Sonarr
+    - https://github.com/Radarr/Radarr
+    - https://github.com/transmission/transmission
+    - https://nzbget.net/
+    - https://github.com/k8s-at-home/container-images
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/pirate-ship-0.0.1/pirate-ship-0.0.1.tgz
+    version: 0.0.1
   prowlarr:
   - apiVersion: v2
     appVersion: 0.4.9-develop
@@ -142,4 +189,4 @@ entries:
     urls:
     - https://github.com/graytonio/homelab-helm-charts/releases/download/transmission-1.0.0/transmission-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-07T04:46:36.922126245Z"
+generated: "2022-12-09T17:03:50.111334348Z"
