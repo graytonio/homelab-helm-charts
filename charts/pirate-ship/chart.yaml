@@ -22,6 +22,27 @@ sources:
   - https://nzbget.net/
   - https://github.com/k8s-at-home/container-images
 dependencies:
-- name: common
-  version: 1.1.1
-  repository: https://bjw-s.github.io/helm-charts/
+- name: radarr
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: radarr.enabled
+
+- name: sonarr
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: sonarr.enabled
+
+- name: transmission
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  conditon: transmission.enabled
+
+- name: nzbget
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: nzbget.enabled
+
+- name: prowlarr
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: radarr.enabled,sonarr.enabled
