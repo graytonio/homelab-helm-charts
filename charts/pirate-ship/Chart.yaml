@@ -35,7 +35,7 @@ dependencies:
 - name: transmission
   version: 1.0.0
   repository: https://graytonward.com/homelab-helm-charts/
-  conditon: transmission.enabled
+  condition: transmission.enabled
 
 - name: nzbget
   version: 1.0.0
