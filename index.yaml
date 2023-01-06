@@ -169,6 +169,28 @@ entries:
   transmission:
   - apiVersion: v2
     appVersion: 3.00-r6-ls144
+    created: "2023-01-06T03:43:18.302288645Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 1.1.3
+    description: Transmission is a cross-platform BitTorrent client
+    digest: d62dc73716e295efca429ca942c4167f277dbb50a6a55e6087e874fa0a822c4a
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/transmission
+    icon: https://raw.githubusercontent.com/transmission/transmission/main/extras/transmission-1920.jpg
+    keywords:
+    - transmission
+    - torrent
+    kubeVersion: '>=1.16.0-0'
+    name: transmission
+    sources:
+    - https://github.com/transmission/transmission
+    - https://github.com/k8s-at-home/container-images
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/transmission-1.0.1/transmission-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 3.00-r6-ls144
     created: "2022-12-07T04:46:36.922109844Z"
     dependencies:
     - name: common
@@ -189,4 +211,4 @@ entries:
     urls:
     - https://github.com/graytonio/homelab-helm-charts/releases/download/transmission-1.0.0/transmission-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-09T17:03:50.111334348Z"
+generated: "2023-01-06T03:43:18.302302845Z"
