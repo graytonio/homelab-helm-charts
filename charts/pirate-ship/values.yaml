@@ -1,11 +1,27 @@
 radarr:
-  enabled: true
+  enabled: false
+  persistence:
+    media:
+      enabled: false
+    config:
+      enabled: false
 
 sonarr:
-  enabled: true
+  enabled: false
+  persistence:
+    media:
+      enabled: false
+    config:
+      enabled: false
 
 transmission:
-  enabled: true
+  enabled: false
+  persistence:
+    config:
+      enabled: false
 
 nzbget:
-  enabled: true
+  enabled: false
+  persistence:
+    config:
+      enabled: false

@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+    name: configarr-init
+    namespace: {{ .Release.Namespace }}
+spec:
+    backoffLimit: 15 # TODO When configarr has wait for service flag reduce to 6
+    template:
+        spec:
+            containers:
+              - name: configarr
+                image: ghcr.io/graytonio/configarr:0.0.2
+                command: ["/configarr", "--config=/config/config.yaml", "--verbose"]
+                volumeMounts:
+                  - name: config-file
+                    mountPath: /config
+            restartPolicy: Never
+            volumes:
+              - name: config-file
+                configMap:
+                    name: configarr-config
+                    items:
+                      - key: config.yaml
+                        path: config.yaml
