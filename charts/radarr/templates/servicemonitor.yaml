@@ -1,5 +1,5 @@
 {{- if .Values.metrics.enabled }}
-{{- include "bjw-s.common.values.setup" . -}}
+{{- include "bjw-s.common.loader.init" . }}
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
