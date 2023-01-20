@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-    name: configarr-init
+    name: configarr-init-{{ .Release.Revision }}
     namespace: {{ .Release.Namespace }}
 spec:
     backoffLimit: 15 # TODO When configarr has wait for service flag reduce to 6

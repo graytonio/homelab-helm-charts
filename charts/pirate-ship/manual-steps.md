@@ -4,6 +4,7 @@
 
 - Adding Indexers to Prowlarr
 - Adding News Servers to NZBGet
+- Setting Up Overseerr
 
 ## Issues
 

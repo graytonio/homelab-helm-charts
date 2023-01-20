@@ -1,5 +1,10 @@
 radarr:
   enabled: false
+  metrics:
+    enabled: false
+  serviceMonitor:
+    metrics:
+      enabled: false
   persistence:
     media:
       enabled: false
@@ -8,6 +13,11 @@ radarr:
 
 sonarr:
   enabled: false
+  metrics:
+    enabled: false
+  serviceMonitor:
+    metrics:
+      enabled: false
   persistence:
     media:
       enabled: false
@@ -21,6 +31,12 @@ transmission:
       enabled: false
 
 nzbget:
+  enabled: false
+  persistence:
+    config:
+      enabled: false
+
+overseerr:
   enabled: false
   persistence:
     config:

@@ -4,3 +4,4 @@ charts/**/charts/
 
 # Testing
 __snapshot__/
+test-values/
