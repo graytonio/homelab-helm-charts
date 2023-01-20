@@ -60,37 +60,29 @@ persistence:
     enabled: false
     mountPath: /media
 
+serviceMonitor:
+  metrics:
+    enabled: false
+    serviceName: '{{ include "bjw-s.common.lib.chart.names.fullname" $ }}-metrics'
+    endpoints:
+      - port: metrics
+        scheme: http
+        path: /metrics
+        interval: 1m
+        scrapeTimeout: 10s
+
 metrics:
-  # -- Enable and configure Exportarr sidecar and Prometheus serviceMonitor.
+  # -- Enable and configure Exportarr sidecar
   # @default -- See values.yaml
   enabled: false
-  serviceMonitor:
-    interval: 3m
-    scrapeTimeout: 1m
-    labels: {}
   # -- Enable and configure Prometheus Rules for the chart under this key.
   # @default -- See values.yaml
-  prometheusRule:
-    enabled: false
-    labels: {}
-    # -- Configure additionial rules for the chart under this key.
-    # @default -- See prometheusrules.yaml
-    rules: []
-      # - alert: RadarrDown
-      #   annotations:
-      #     description: Radarr service is down.
-      #     summary: Radarr is down.
-      #   expr: |
-      #     radarr_system_status == 0
-      #   for: 5m
-      #   labels:
-      #     severity: critical
   exporter:
     image:
       # -- image repository
       repository: ghcr.io/onedr0p/exportarr
       # -- image tag
-      tag: v1.0.0
+      tag: v1.1.0
       # -- image pull policy
       pullPolicy: IfNotPresent
     env:
