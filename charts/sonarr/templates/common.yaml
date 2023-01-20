@@ -2,14 +2,14 @@
 {{- include "bjw-s.common.loader.init" . }}
 
 {{/* Append the hardcoded settings */}}
-{{- define "radarr.harcodedValues" -}}
+{{- define "sonarr.harcodedValues" -}}
 {{ if .Values.metrics.enabled }}
 additionalContainers:
   exporter:
     name: exporter
     image: "{{ .Values.metrics.exporter.image.repository }}:{{ .Values.metrics.exporter.image.tag }}"
     imagePullPolicy: {{ .Values.metrics.exporter.image.pullPolicy }}
-    args: ["radarr"]
+    args: ["sonarr"]
     env:
       - name: URL
         value: "http://localhost"
@@ -44,7 +44,7 @@ service:
         port: {{ .Values.metrics.exporter.env.port }}
 {{ end }}
 {{- end -}}
-{{- $_ := mergeOverwrite .Values (include "radarr.harcodedValues" . | fromYaml) -}}
+{{- $_ := mergeOverwrite .Values (include "sonarr.harcodedValues" . | fromYaml) -}}
 
 {{/* Render the templates */}}
 {{ include "bjw-s.common.loader.generate" . }}
