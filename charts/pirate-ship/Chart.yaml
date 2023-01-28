@@ -3,7 +3,7 @@ apiVersion: v2
 appVersion: v0.0.1
 description: Fully managed -arr app deployment
 name: pirate-ship
-version: 0.0.3
+version: 0.0.1
 kubeVersion: ">=1.16.0-0"
 keywords:
   - jackett
@@ -23,17 +23,17 @@ sources:
   - https://github.com/k8s-at-home/container-images
 dependencies:
 - name: radarr
-  version: 1.1.0
+  version: 1.0.0
   repository: https://graytonward.com/homelab-helm-charts/
   condition: radarr.enabled
 
 - name: sonarr
-  version: 1.1.1
+  version: 1.0.0
   repository: https://graytonward.com/homelab-helm-charts/
   condition: sonarr.enabled
 
 - name: transmission
-  version: 1.0.1
+  version: 1.0.0
   repository: https://graytonward.com/homelab-helm-charts/
   condition: transmission.enabled
 

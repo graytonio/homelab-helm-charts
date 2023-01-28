@@ -3,7 +3,7 @@ apiVersion: v2
 appVersion: 21.1.20221201
 description: NZBGet is a Usenet downloader client
 name: nzbget
-version: 1.0.1
+version: 1.0.0
 kubeVersion: ">=1.16.0-0"
 keywords:
   - nzbget
