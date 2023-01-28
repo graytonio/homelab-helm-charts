@@ -1,0 +1,99 @@
+image:
+  repository: ghcr.io/benphelps/homepage
+  # tag: v0.6.0
+
+# Enable RBAC. RBAC is necessary to use Kubernetes integration
+enableRbac: false
+
+serviceAccount:
+  # Specify a different service account name
+  name: homepage
+  # Create service account. Needed when RBAC is enabled.
+  create: false
+
+service:
+  main:
+    ports:
+      http:
+        port: 3000
+
+controller:
+  strategy: RollingUpdate
+  rollingUpdate:
+    maxSurge: 25%
+    maxUnavailable: 25%
+
+# Enable the ingress to expose Homepage to the network.
+ingress:
+  main:
+    enabled: false
+    # labels:
+    #   # This label will enable discover of this deployment in Homepage
+    #   gethomepage.dev/enabled: "true"
+    # annotations:
+    #   # These annotations will configure how this deployment is shown in Homepage
+    #   gethomepage.dev/name: "Homepage"
+    #   gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
+    #   gethomepage.dev/group: "A New Group"
+    #   gethomepage.dev/icon: "homepage.png"
+    # ingressClassName: "nginx"
+    # hosts:
+    #   - host: &host "homepage.local"
+    #     paths:
+    #       - path: /
+    #         pathType: Prefix
+    # tls:
+    #   - hosts:
+    #       - *host
+
+# All the config files for Homepage can be specified under their relevant config block.
+config:
+  bookmarks:
+  services:
+  widgets:
+    - resources:
+        backend: kubernetes
+        expanded: true
+        cpu: true
+        memory: true
+    - search:
+        provider: duckduckgo
+        target: _blank
+    - kubernetes:
+        cluster:
+          show: false
+          cpu: true
+          memory: true
+          showLabel: true
+        nodes:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+    # - longhorn:
+    #     expanded: true
+    #     total: true
+    #     labels: true
+        # nodes: true
+  kubernetes:
+    # change mode to 'cluster' to use RBAC service account
+    mode: cluster
+  docker:
+  settings:
+    # providers:
+    #   longhorn:
+    #     url: http://longhorn-frontend.longhorn-system.svc
+
+persistence:
+  logs:
+    enabled: true
+    type: emptyDir
+    mountPath: /app/config/logs
+
+# resources:
+#   requests:
+#     memory: 10Mi
+#     cpu: 10m
+#   limits:
+#     memory: 200Mi
+#     cpu: 500m
