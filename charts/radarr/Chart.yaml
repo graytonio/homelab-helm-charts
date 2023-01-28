@@ -3,7 +3,7 @@ apiVersion: v2
 appVersion: 4.2.4
 description: A fork of Sonarr to work with movies à la Couchpotato
 name: radarr
-version: 1.1.0
+version: 1.1.1
 kubeVersion: ">=1.16.0-0"
 keywords:
   - radarr
@@ -16,5 +16,5 @@ sources:
   - https://github.com/k8s-at-home/container-images
 dependencies:
 - name: common
-  version: 1.1.3
+  version: 1.2.1
   repository: https://bjw-s.github.io/helm-charts/

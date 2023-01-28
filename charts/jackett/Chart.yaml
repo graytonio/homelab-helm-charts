@@ -3,7 +3,7 @@ apiVersion: v2
 appVersion: 0.20.2309
 description: API Support for your favorite torret trackers
 name: jackett
-version: 1.0.0
+version: 1.0.1
 kubeVersion: ">=1.16.0-0"
 keywords:
   - jackett
@@ -15,5 +15,5 @@ sources:
   - https://github.com/k8s-at-home/container-images
 dependencies:
 - name: common
-  version: 1.1.3
+  version: 1.2.1
   repository: https://bjw-s.github.io/helm-charts/
