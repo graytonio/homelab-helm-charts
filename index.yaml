@@ -1,0 +1,165 @@
+apiVersion: v1
+entries:
+  homepage:
+  - apiVersion: v2
+    appVersion: v0.6.0
+    created: "2023-01-28T07:26:28.894889518Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts
+      version: 1.2.1
+    description: Chart for benphelps homepage
+    digest: 452dd68c17ffc0d40caac305fb6fa9cd9a2d1285dadcf4c13910f63d4d13025a
+    icon: https://github.com/benphelps/homepage/blob/de584eae8f12a0d257e554e9511ef19bd2a1232c/public/mstile-150x150.png
+    maintainers:
+    - name: jameswynn
+    name: homepage
+    sources:
+    - https://github.com/benphelps/homepage/
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/homepage-1.0.0/homepage-1.0.0.tgz
+    version: 1.0.0
+  nzbget:
+  - apiVersion: v2
+    appVersion: 21.1.20221201
+    created: "2023-01-28T07:26:29.019537531Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 1.2.1
+    description: NZBGet is a Usenet downloader client
+    digest: 6357c8f47060067156757d3853f71d7e8653d9700d41639191c95c9bcb1a214a
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/nzbget
+    icon: https://avatars1.githubusercontent.com/u/3368377?s=400&v=4
+    keywords:
+    - nzbget
+    - usenet
+    kubeVersion: '>=1.16.0-0'
+    name: nzbget
+    sources:
+    - https://nzbget.net/
+    - https://github.com/k8s-at-home/container-images
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/nzbget-1.0.0/nzbget-1.0.0.tgz
+    version: 1.0.0
+  overseerr:
+  - apiVersion: v2
+    appVersion: 1.31.0
+    created: "2023-01-28T07:26:29.153653758Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 1.2.1
+    description: Overseerr is a request management and media discovery tool built
+      to work with your existing Plex ecosystem.
+    digest: 576b12cfdb9aa4aac8dda2f699b397e6921ef214d2fa0c9c398fb667b2ba9aea
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/overseerr
+    keywords:
+    - overseerr
+    - plex
+    - arr
+    kubeVersion: '>=1.16.0-0'
+    name: overseerr
+    sources:
+    - https://github.com/sct/overseerr
+    - https://github.com/k8s-at-home/container-images
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/overseerr-1.0.0/overseerr-1.0.0.tgz
+    version: 1.0.0
+  prowlarr:
+  - apiVersion: v2
+    appVersion: 0.4.9-develop
+    created: "2023-01-28T07:26:29.29330861Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 1.2.1
+    description: Indexer manager/proxy built on the popular arr net base stack to
+      integrate with your various PVR apps.
+    digest: a78576d397f1ab2260cf7d0a74a8d791860860015c8f23bb1670805c69b7c775
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/prowlarr
+    icon: https://raw.githubusercontent.com/Prowlarr/Prowlarr/develop/Logo/400.png
+    keywords:
+    - prowlarr
+    - torrent
+    - usenet
+    kubeVersion: '>=1.16.0-0'
+    name: prowlarr
+    sources:
+    - https://github.com/Prowlarr/Prowlarr
+    - https://github.com/k8s-at-home/container-images
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/prowlarr-1.0.0/prowlarr-1.0.0.tgz
+    version: 1.0.0
+  radarr:
+  - apiVersion: v2
+    appVersion: 4.2.4
+    created: "2023-01-28T07:26:29.428577163Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 1.2.1
+    description: A fork of Sonarr to work with movies à la Couchpotato
+    digest: b001d7d754c921990854c320418b14349657eedd6b0860829fd67e3eb636149b
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/radarr
+    icon: https://github.com/Radarr/Radarr/blob/aphrodite/Logo/512.png?raw=true
+    keywords:
+    - radarr
+    - torrent
+    - usenet
+    kubeVersion: '>=1.16.0-0'
+    name: radarr
+    sources:
+    - https://github.com/Radarr/Radarr
+    - https://github.com/k8s-at-home/container-images
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/radarr-1.0.1/radarr-1.0.1.tgz
+    version: 1.0.1
+  sonarr:
+  - apiVersion: v2
+    appVersion: 3.0.9
+    created: "2023-01-28T07:26:29.589641598Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 1.2.1
+    description: Smart PVR for newsgroup and bittorrent users
+    digest: 085a6f43a79b8e581a86e57c3eb3c3fe35d10cbd200f9a247e49a689cb52320c
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/sonarr
+    icon: https://github.com/Sonarr/Sonarr/blob/phantom-develop/Logo/512.png?raw=true
+    keywords:
+    - sonarr
+    - torrent
+    - usenet
+    kubeVersion: '>=1.16.0-0'
+    name: sonarr
+    sources:
+    - https://github.com/Sonarr/Sonarr
+    - https://github.com/k8s-at-home/container-images
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/sonarr-1.0.0/sonarr-1.0.0.tgz
+    version: 1.0.0
+  transmission:
+  - apiVersion: v2
+    appVersion: 3.00-r6-ls144
+    created: "2023-01-28T07:26:29.728146924Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 1.2.1
+    description: Transmission is a cross-platform BitTorrent client
+    digest: aa1329c08d0d8d69baf51d467144b5f4af3a5d030e0d8fd461e1c24706821d6f
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/transmission
+    icon: https://raw.githubusercontent.com/transmission/transmission/main/extras/transmission-1920.jpg
+    keywords:
+    - transmission
+    - torrent
+    kubeVersion: '>=1.16.0-0'
+    name: transmission
+    sources:
+    - https://github.com/transmission/transmission
+    - https://github.com/k8s-at-home/container-images
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/transmission-1.0.0/transmission-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-01-28T07:26:29.728158725Z"
