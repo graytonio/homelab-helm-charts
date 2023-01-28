@@ -23,7 +23,7 @@ sources:
   - https://github.com/k8s-at-home/container-images
 dependencies:
 - name: radarr
-  version: 1.0.0
+  version: 1.0.1
   repository: https://graytonward.com/homelab-helm-charts/
   condition: radarr.enabled
 
