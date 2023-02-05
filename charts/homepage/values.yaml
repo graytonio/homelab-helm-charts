@@ -49,6 +49,10 @@ ingress:
 # All the config files for Homepage can be specified under their relevant config block.
 config:
   bookmarks:
+    - Developer:
+        - Github:
+            - abbr: GH
+              href: https://github.com
   services:
   widgets:
     - resources:
