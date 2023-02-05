@@ -81,7 +81,7 @@ config:
         # nodes: true
   kubernetes:
     # change mode to 'cluster' to use RBAC service account
-    mode: cluster
+    # mode: cluster
   docker:
   settings:
     # providers:
