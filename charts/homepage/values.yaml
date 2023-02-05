@@ -56,24 +56,25 @@ config:
   services:
   widgets:
     - resources:
-        backend: kubernetes
+      # change backend to 'kubernetes' to use Kubernetes integration. Requires RBAC.
+        backend: resources
         expanded: true
         cpu: true
         memory: true
     - search:
         provider: duckduckgo
         target: _blank
-    - kubernetes:
-        cluster:
-          show: false
-          cpu: true
-          memory: true
-          showLabel: true
-        nodes:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
+    # - kubernetes:
+    #     cluster:
+    #       show: false
+    #       cpu: true
+    #       memory: true
+    #       showLabel: true
+    #     nodes:
+    #       show: true
+    #       cpu: true
+    #       memory: true
+    #       showLabel: true
     # - longhorn:
     #     expanded: true
     #     total: true
@@ -81,7 +82,7 @@ config:
         # nodes: true
   kubernetes:
     # change mode to 'cluster' to use RBAC service account
-    # mode: cluster
+    mode: disable
   docker:
   settings:
     # providers:
