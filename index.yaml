@@ -3,6 +3,24 @@ entries:
   homepage:
   - apiVersion: v2
     appVersion: v0.6.0
+    created: "2023-02-05T21:06:13.682038886Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts
+      version: 1.2.1
+    description: Chart for benphelps homepage
+    digest: 2b95b4bd12f43285014219409b7fd807949246fb4f4179e8e7f7c149b65fc45a
+    icon: https://github.com/benphelps/homepage/blob/de584eae8f12a0d257e554e9511ef19bd2a1232c/public/mstile-150x150.png
+    maintainers:
+    - name: jameswynn
+    name: homepage
+    sources:
+    - https://github.com/benphelps/homepage/
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/homepage-1.0.3/homepage-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
+    appVersion: v0.6.0
     created: "2023-01-28T07:26:28.894889518Z"
     dependencies:
     - name: common
@@ -367,4 +385,4 @@ entries:
     urls:
     - https://github.com/graytonio/homelab-helm-charts/releases/download/transmission-1.0.0/transmission-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-05T05:51:10.056400546Z"
+generated: "2023-02-05T21:06:13.682056386Z"
