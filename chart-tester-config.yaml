@@ -1,0 +1,5 @@
+chart-dirs:
+  - charts
+chart-repos:
+  - bjws=https://bjw-s.github.io/helm-charts
+target-branch: main
