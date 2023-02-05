@@ -24,6 +24,11 @@ sonarr:
     config:
       enabled: false
 
+prowlarr:
+  persistence:
+    config:
+      enabled: false
+
 transmission:
   enabled: false
   persistence:

@@ -36,15 +36,15 @@ data:
                       value: {{ .Values.nzbget.service.main.ports.http.port }}
                     - name: tvCategory
                       value: "Movies"
-                    {{ - if .Values.nzbget.env  }}
-                    {{ - if .Values.nzbget.env.NZBGET_USER}}
+                    {{- if .Values.nzbget.env  }}
+                    {{- if .Values.nzbget.env.NZBGET_USER}}
                     - name: username
                       value: {{ .Values.nzbget.env.NZBGET_USER | default "nzbget" | quote }}
                     {{- end }}
-                    {{ - if .Values.nzbget.env.NZBGET_PASS}}
+                    {{- if .Values.nzbget.env.NZBGET_PASS}}
                     - name: password
                       value: {{ .Values.nzbget.env.NZBGET_PASS | default "tegbzn6789" | quote }}
-                    {{ - end }}
+                    {{- end }}
               {{- end }}
         {{- end }}
         {{- if .Values.sonarr.enabled }}
