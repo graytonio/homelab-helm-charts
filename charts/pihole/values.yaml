@@ -19,9 +19,23 @@ service:
     ports:
       http:
         port: 80
-  dns:
+  dns-tcp:
+    enabled: true
+    annotations:
+      metallb.universe.tf/allow-shared-ip: shared
     ports:
       dns:
+        enabled: true
+        protocol: TCP
+        port: 53
+  dns-udp:
+    enabled: true
+    annotations:
+      metallb.universe.tf/allow-shared-ip: shared
+    ports:
+      dns:
+        enabled: true
+        protocol: UDP
         port: 53
 
 ingress:
