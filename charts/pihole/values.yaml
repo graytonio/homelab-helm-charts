@@ -18,11 +18,11 @@ env:
   #       name: pihole-web-password
   #       key: password
 
-# -- Default password secret uncomment to enable 
+# -- Default password secret uncomment to enable
 # secrets:
 #   pihole-web-password:
 #     enabled: true
-#     stringData: 
+#     stringData:
 #       password: password
 
 # -- Configures service settings for the chart.
