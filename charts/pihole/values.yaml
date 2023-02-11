@@ -1,0 +1,60 @@
+image:
+  # -- image repository
+  repository: pihole/pihole
+  # @default -- chart.appVersion
+  tag:
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+# -- environment variables.
+# @default -- See below
+env:
+  # -- Set the container timezone
+  TZ: UTC
+  # -- Set web interface password uncomment to enable
+  # WEBPASSWORD:
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: pihole-web-password
+  #       key: password
+
+# -- Default password secret uncomment to enable
+# secrets:
+#   pihole-web-password:
+#     enabled: true
+#     stringData:
+#       password: password
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    ports:
+      http:
+        port: 80
+  dns-tcp:
+    enabled: true
+    ports:
+      dns-tcp:
+        enabled: true
+        protocol: TCP
+        port: 53
+  dns-udp:
+    enabled: true
+    ports:
+      dns-udp:
+        enabled: true
+        protocol: UDP
+        port: 53
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See values.yaml
+  main:
+    enabled: false
+
+# -- Configure persistence settings for the chart under this key.
+# @default -- See values.yaml
+persistence:
+  config:
+    enabled: false

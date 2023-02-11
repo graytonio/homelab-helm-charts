@@ -1,0 +1,19 @@
+---
+apiVersion: v2
+appVersion: 2023.01.10
+description: The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.
+name: pihole
+version: 1.0.0
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - dns
+  - pihole
+  - adblock
+sources:
+  - https://github.com/pi-hole/pi-hole
+maintainers:
+  - name: graytonio
+dependencies:
+- name: common
+  version: 1.2.1
+  repository: https://bjw-s.github.io/helm-charts/
