@@ -102,6 +102,30 @@ entries:
     urls:
     - https://github.com/graytonio/homelab-helm-charts/releases/download/overseerr-1.0.0/overseerr-1.0.0.tgz
     version: 1.0.0
+  pihole:
+  - apiVersion: v2
+    appVersion: 2023.01.10
+    created: "2023-02-11T20:54:02.795733724Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 1.2.1
+    description: The Pi-hole® is a DNS sinkhole that protects your devices from unwanted
+      content without installing any client-side software.
+    digest: 00bf45544777dbd6025e990a2f3ae8148d135b6e963b33208100608ba109405e
+    keywords:
+    - dns
+    - pihole
+    - adblock
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: graytonio
+    name: pihole
+    sources:
+    - https://github.com/pi-hole/pi-hole
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/pihole-1.0.0/pihole-1.0.0.tgz
+    version: 1.0.0
   pirate-ship:
   - apiVersion: v2
     appVersion: v0.0.1
@@ -403,4 +427,4 @@ entries:
     urls:
     - https://github.com/graytonio/homelab-helm-charts/releases/download/transmission-1.0.0/transmission-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-05T23:07:04.312735938Z"
+generated: "2023-02-11T20:54:02.795772724Z"
