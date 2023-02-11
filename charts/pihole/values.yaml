@@ -11,6 +11,11 @@ image:
 env:
   # -- Set the container timezone
   TZ: UTC
+  WEBPASSWORD:
+    valueFrom:
+      secretKeyRef:
+        name: pihole-web-password
+        key: password
 
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
@@ -21,19 +26,15 @@ service:
         port: 80
   dns-tcp:
     enabled: true
-    annotations:
-      metallb.universe.tf/allow-shared-ip: shared
     ports:
-      dns:
+      dns-tcp:
         enabled: true
         protocol: TCP
         port: 53
   dns-udp:
     enabled: true
-    annotations:
-      metallb.universe.tf/allow-shared-ip: shared
     ports:
-      dns:
+      dns-udp:
         enabled: true
         protocol: UDP
         port: 53
