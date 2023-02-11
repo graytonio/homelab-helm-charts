@@ -11,11 +11,19 @@ image:
 env:
   # -- Set the container timezone
   TZ: UTC
-  WEBPASSWORD:
-    valueFrom:
-      secretKeyRef:
-        name: pihole-web-password
-        key: password
+  # -- Set web interface password uncomment to enable
+  # WEBPASSWORD:
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: pihole-web-password
+  #       key: password
+
+# -- Default password secret uncomment to enable 
+# secrets:
+#   pihole-web-password:
+#     enabled: true
+#     stringData: 
+#       password: password
 
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
