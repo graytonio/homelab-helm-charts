@@ -37,7 +37,7 @@ env:
   # -- Set the container timezone
   TZ: UTC
   # -- Path in container where the Web UI is located
-  TRANSMISSION_WEB_HOME: /config/flood-for-transmission/
+  TRANSMISSION_WEB_HOME: /flood-for-transmission
   # -- Password to access the Web UI
   TRANSMISSION_RPC_PASSWORD: CHANGEME
   # -- Torrent download directory
