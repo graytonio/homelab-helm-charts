@@ -24,23 +24,27 @@ sonarr:
     config:
       enabled: false
 
+# TODO Prowlarr metrics exporter
 prowlarr:
   persistence:
     config:
       enabled: false
 
+# TODO Transmission metrics exporter
 transmission:
   enabled: false
   persistence:
     config:
       enabled: false
 
+# TODO NZBGet metrics exporter
 nzbget:
   enabled: false
   persistence:
     config:
       enabled: false
 
+# TODO Overseerr metrics exporter
 overseerr:
   enabled: false
   persistence:
