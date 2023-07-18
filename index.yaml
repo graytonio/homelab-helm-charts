@@ -129,6 +129,57 @@ entries:
   pirate-ship:
   - apiVersion: v2
     appVersion: v0.0.1
+    created: "2023-07-18T23:13:15.798021865Z"
+    dependencies:
+    - condition: radarr.enabled
+      name: radarr
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.1
+    - condition: sonarr.enabled
+      name: sonarr
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    - condition: transmission.enabled
+      name: transmission
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    - condition: nzbget.enabled
+      name: nzbget
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    - condition: radarr.enabled,sonarr.enabled
+      name: prowlarr
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    - condition: overseerr.enabled
+      name: overseerr
+      repository: https://graytonward.com/homelab-helm-charts/
+      version: 1.0.0
+    description: Fully managed -arr app deployment
+    digest: dbb320b4be56b0703c3dc988b5cf1db9948f271226a27770fdae057274b58da3
+    home: https://github.com/graytonio/homelab-helm-charts/tree/main/charts/pirate-ship
+    keywords:
+    - jackett
+    - radarr
+    - sonarr
+    - transmission
+    - nzbget
+    - torrent
+    - usenet
+    kubeVersion: '>=1.16.0-0'
+    name: pirate-ship
+    sources:
+    - https://github.com/Jackett/Jackett
+    - https://github.com/Sonarr/Sonarr
+    - https://github.com/Radarr/Radarr
+    - https://github.com/transmission/transmission
+    - https://nzbget.net/
+    - https://github.com/k8s-at-home/container-images
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/pirate-ship-0.0.5/pirate-ship-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
+    appVersion: v0.0.1
     created: "2023-02-05T05:51:10.056381946Z"
     dependencies:
     - condition: radarr.enabled
@@ -427,4 +478,4 @@ entries:
     urls:
     - https://github.com/graytonio/homelab-helm-charts/releases/download/transmission-1.0.0/transmission-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-11T20:54:02.795772724Z"
+generated: "2023-07-18T23:13:15.798047665Z"
