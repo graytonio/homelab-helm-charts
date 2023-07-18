@@ -1,3 +1,5 @@
+autoConfig: true
+
 radarr:
   enabled: false
   metrics:

@@ -1,7 +1,11 @@
+{{ if .Values.autoConfig }}
 apiVersion: batch/v1
 kind: Job
 metadata:
-    name: configarr-init-{{ .Release.Revision }}
+    generateName: configarr-init-
+    annotations:
+      argocd.argoproj.io/hook: PostSync
+      helm.sh/hook: post-upgrade
     namespace: {{ .Release.Namespace }}
 spec:
     backoffLimit: 15 # TODO When configarr has wait for service flag reduce to 6
@@ -22,3 +26,4 @@ spec:
                     items:
                       - key: config.yaml
                         path: config.yaml
+{{ end }}
