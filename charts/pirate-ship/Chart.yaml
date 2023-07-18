@@ -3,7 +3,7 @@ apiVersion: v2
 appVersion: v0.0.1
 description: Fully managed -arr app deployment
 name: pirate-ship
-version: 0.0.4
+version: 0.0.5
 kubeVersion: ">=1.16.0-0"
 keywords:
   - jackett
