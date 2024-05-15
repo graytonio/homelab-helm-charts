@@ -1,0 +1,33 @@
+{{ if .Values.radarr.config.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: radarr-configxml
+data:
+    config.xml: |
+        <Config>
+            <BindAddress>*</BindAddress>
+            <Port>7878</Port>
+            <SslPort>9898</SslPort>
+            <EnableSsl>False</EnableSsl>
+            <LaunchBrowser>True</LaunchBrowser>
+            <ApiKey>{{ .Values.radarr.config.apiKey }}</ApiKey>
+            <AuthenticationMethod>{{ .Values.radarr.config.auth.method }}</AuthenticationMethod>
+            <AuthenticationRequired>{{ .Values.radarr.config.auth.require }}</AuthenticationRequired>
+            <Branch>master</Branch>
+            <LogLevel>info</LogLevel>
+            <SslCertPath></SslCertPath>
+            <SslCertPassword></SslCertPassword>
+            <UrlBase></UrlBase>
+            <InstanceName>Radarr</InstanceName>
+            <UpdateMechanism>Docker</UpdateMechanism>
+{{ if .Values.radarr.config.pg.enabled }}
+            <PostgresUser>{{ .Values.radarr.config.pg.user }}</PostgresUser>
+            <PostgresPassword>{{ .Values.radarr.config.pg.user }}</PostgresPassword>
+            <PostgresPort>5432</PostgresPort>
+            <PostgresHost>{{ .Values.radarr.config.pg.host | default (printf "postgres.%s.svc.cluster.local" .Release.Namespace) }}</PostgresHost>
+            <PostgresMainDb>radarrmain</PostgresMainDb>
+            <PostgresLogDb>radarrlog</PostgresLogDb>
+{{ end }}
+        </Config>
+{{ end }}

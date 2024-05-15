@@ -1,0 +1,37 @@
+radarr:
+  config:
+    enabled: true
+    apiKey: aaaaaaaabbbbbbbbccccccccdddddddd
+    auth:
+      method: Basic
+      require: DisabledForLocalAddresses
+    logLevel: info
+    pg:
+      enabled: true
+      username: radarr
+      password: radarr-password
+
+persistence:
+  config:
+    enabled: false
+    type: 
+
+controllers:
+  main:
+    enabled: true
+    replicas: 1
+    containers:
+      main:
+        image:
+          repository: linuxserver/radarr
+          tag: 5.4.6
+          pullPolicy: IfNotPresent
+
+metrics:
+  enabled: true
+  exporter:
+    image:
+      repository: ghcr.io/onedr0p/exportarr
+      tag: v2.0.1
+      pullPolicy: IfNotPresent
+    port: 9793

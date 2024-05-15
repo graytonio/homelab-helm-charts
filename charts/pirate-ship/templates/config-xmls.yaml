@@ -1,0 +1,97 @@
+{{ if .Values.global.config.pg.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: radarr-configxml
+data:
+    config.xml: |
+        <Config>
+            <BindAddress>*</BindAddress>
+            <Port>7878</Port>
+            <SslPort>9898</SslPort>
+            <EnableSsl>False</EnableSsl>
+            <LaunchBrowser>True</LaunchBrowser>
+            <ApiKey>{{ .Values.global.config.apiKey }}</ApiKey>
+            <AuthenticationMethod>{{ .Values.global.config.auth.method }}</AuthenticationMethod>
+            <AuthenticationRequired>{{ .Values.global.config.auth.require }}</AuthenticationRequired>
+            <Branch>master</Branch>
+            <LogLevel>info</LogLevel>
+            <SslCertPath></SslCertPath>
+            <SslCertPassword></SslCertPassword>
+            <UrlBase></UrlBase>
+            <InstanceName>Radarr</InstanceName>
+            <UpdateMechanism>Docker</UpdateMechanism>
+{{ if .Values.global.config.pg.enabled }}
+            <PostgresUser>{{ .Values.global.config.pg.username }}</PostgresUser>
+            <PostgresPassword>{{ .Values.global.config.pg.password }}</PostgresPassword>
+            <PostgresPort>5432</PostgresPort>
+            <PostgresHost>{{ .Values.global.config.pg.host | default (printf "pirate-ship-postgresql.%s.svc.cluster.local" .Release.Namespace) }}</PostgresHost>
+            <PostgresMainDb>radarrmain</PostgresMainDb>
+            <PostgresLogDb>radarrlog</PostgresLogDb>
+{{ end }}
+        </Config>
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: sonarr-configxml
+data:
+    config.xml: |
+        <Config>
+            <BindAddress>*</BindAddress>
+            <Port>8989</Port>
+            <SslPort>9898</SslPort>
+            <EnableSsl>False</EnableSsl>
+            <LaunchBrowser>True</LaunchBrowser>
+            <ApiKey>{{ .Values.global.config.apiKey }}</ApiKey>
+            <AuthenticationMethod>{{ .Values.global.config.auth.method }}</AuthenticationMethod>
+            <AuthenticationRequired>{{ .Values.global.config.auth.require }}</AuthenticationRequired>
+            <Branch>master</Branch>
+            <LogLevel>info</LogLevel>
+            <SslCertPath></SslCertPath>
+            <SslCertPassword></SslCertPassword>
+            <UrlBase></UrlBase>
+            <InstanceName>Sonarr</InstanceName>
+            <UpdateMechanism>Docker</UpdateMechanism>
+{{ if .Values.global.config.pg.enabled }}
+            <PostgresUser>{{ .Values.global.config.pg.username }}</PostgresUser>
+            <PostgresPassword>{{ .Values.global.config.pg.password }}</PostgresPassword>
+            <PostgresPort>5432</PostgresPort>
+            <PostgresHost>{{ .Values.global.config.pg.host | default (printf "pirate-ship-postgresql.%s.svc.cluster.local" .Release.Namespace) }}</PostgresHost>
+            <PostgresMainDb>sonarrmain</PostgresMainDb>
+            <PostgresLogDb>sonarrlog</PostgresLogDb>
+{{ end }}
+        </Config>
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: prowlarr-configxml
+data:
+    config.xml: |
+        <Config>
+            <BindAddress>*</BindAddress>
+            <Port>9696</Port>
+            <SslPort>6969</SslPort>
+            <EnableSsl>False</EnableSsl>
+            <LaunchBrowser>True</LaunchBrowser>
+            <ApiKey>{{ .Values.global.config.apiKey }}</ApiKey>
+            <AuthenticationMethod>{{ .Values.global.config.auth.method }}</AuthenticationMethod>
+            <AuthenticationRequired>{{ .Values.global.config.auth.require }}</AuthenticationRequired>
+            <Branch>master</Branch>
+            <LogLevel>info</LogLevel>
+            <SslCertPath></SslCertPath>
+            <SslCertPassword></SslCertPassword>
+            <UrlBase></UrlBase>
+            <InstanceName>Prowlarr</InstanceName>
+            <UpdateMechanism>Docker</UpdateMechanism>
+{{ if .Values.global.config.pg.enabled }}
+            <PostgresUser>{{ .Values.global.config.pg.username }}</PostgresUser>
+            <PostgresPassword>{{ .Values.global.config.pg.password }}</PostgresPassword>
+            <PostgresPort>5432</PostgresPort>
+            <PostgresHost>{{ .Values.global.config.pg.host | default (printf "pirate-ship-postgresql.%s.svc.cluster.local" .Release.Namespace) }}</PostgresHost>
+            <PostgresMainDb>prowlarrmain</PostgresMainDb>
+            <PostgresLogDb>prowlarrlog</PostgresLogDb>
+{{ end }}
+        </Config>
+{{ end }}

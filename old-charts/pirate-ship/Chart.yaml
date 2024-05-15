@@ -1,0 +1,53 @@
+---
+apiVersion: v2
+appVersion: v0.0.1
+description: Fully managed -arr app deployment
+name: pirate-ship
+version: 0.0.5
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - jackett
+  - radarr
+  - sonarr
+  - transmission
+  - nzbget
+  - torrent
+  - usenet
+home: https://github.com/graytonio/homelab-helm-charts/tree/main/charts/pirate-ship
+sources:
+  - https://github.com/Jackett/Jackett
+  - https://github.com/Sonarr/Sonarr
+  - https://github.com/Radarr/Radarr
+  - https://github.com/transmission/transmission
+  - https://nzbget.net/
+  - https://github.com/k8s-at-home/container-images
+dependencies:
+- name: radarr
+  version: 1.0.1
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: radarr.enabled
+
+- name: sonarr
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: sonarr.enabled
+
+- name: transmission
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: transmission.enabled
+
+- name: nzbget
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: nzbget.enabled
+
+- name: prowlarr
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: radarr.enabled,sonarr.enabled
+
+- name: overseerr
+  version: 1.0.0
+  repository: https://graytonward.com/homelab-helm-charts/
+  condition: overseerr.enabled

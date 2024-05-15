@@ -1,0 +1,24 @@
+{{ if .Values.global.config.pg.enabled }}
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: pirate-ship-postgresql
+spec:
+  teamId: "pirate-ship"
+  volume:
+    size: {{ .Values.global.config.pg.size }}
+  numberOfInstances: {{ .Values.global.config.pg.replicas }}
+  users:
+    {{ .Values.global.config.pg.username }}:
+    - superuser
+    - createdb
+  databases:
+    radarrmain: {{ .Values.global.config.pg.username }}
+    radarrlog: {{ .Values.global.config.pg.username }}
+    sonarrmain: {{ .Values.global.config.pg.username }}
+    sonarrlog: {{ .Values.global.config.pg.username }}
+    prowlarrmain: {{ .Values.global.config.pg.username }}
+    prowlarrlog: {{ .Values.global.config.pg.username }}
+  postgresql:
+    version: "14"
+{{ end }}

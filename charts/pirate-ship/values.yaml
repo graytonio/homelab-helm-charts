@@ -1,50 +1,130 @@
-autoConfig: true
+global:
+  config:
+    auto: true # Automatically configure and connect applications
+    apiKey: aaaaaaaabbbbbbbbccccccccdddddddd
+    auth:
+      method: Basic
+      require: DisabledForLocalAddresses
+    logLevel: info
+    pg:
+      enabled: true
+      size: 10Gi
+      replicas: 1
+      username: pirateship
+      password: pirateship-password
 
 radarr:
-  enabled: false
-  metrics:
-    enabled: false
-  serviceMonitor:
-    metrics:
-      enabled: false
+  global:
+    nameOverride: radarr
+  controllers:
+    main:
+      enabled: true
+      replicas: 1
+      containers:
+        main:
+          image:
+            repository: linuxserver/radarr
+            tag: 5.4.6
+            pullPolicy: IfNotPresent
+          ports:
+            - containerPort: 7878
+  service:
+    main:
+      controller: main
+      primary: true
+      ports:
+        http:
+          port: 7878
   persistence:
-    media:
-      enabled: false
     config:
-      enabled: false
+      enabled: true
+      type: configMap
+      name: radarr-configxml
+      advancedMounts:
+        main:
+          main:
+            - path: /config/config.xml
+              readOnly: false
+              subPath: config.xml
+    media:
+      enabled: true
+      type: emptyDir
+
+    downloads:
+      enabled: true
+      type: emptyDir
 
 sonarr:
-  enabled: false
-  metrics:
-    enabled: false
-  serviceMonitor:
-    metrics:
-      enabled: false
+  global:
+    nameOverride: sonarr
+  controllers:
+    main:
+      enabled: true
+      replicas: 1
+      containers:
+        main:
+          image:
+            repository: linuxserver/sonarr
+            tag: 4.0.4
+            pullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8989
+  service:
+    main:
+      controller: main
+      primary: true
+      ports:
+        http:
+          port: 8989
   persistence:
+    config:
+      enabled: true
+      type: configMap
+      name: sonarr-configxml
+      advancedMounts:
+        main:
+          main:
+            - path: /config/config.xml
+              readOnly: false
+              subPath: config.xml
     media:
-      enabled: false
-    config:
-      enabled: false
+      enabled: true
+      type: emptyDir
 
+    downloads:
+      enabled: true
+      type: emptyDir
+    
 prowlarr:
+  global:
+    nameOverride: prowlarr
+  controllers:
+    main:
+      enabled: true
+      replicas: 1
+      containers:
+        main:
+          image:
+            repository: linuxserver/prowlarr
+            tag: 1.15.0
+            pullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9696
+  service:
+    main:
+      controller: main
+      primary: true
+      ports:
+        http:
+          port: 9696
   persistence:
     config:
-      enabled: false
-
-transmission:
-  enabled: false
-  persistence:
-    config:
-      enabled: false
-
-nzbget:
-  enabled: false
-  persistence:
-    config:
-      enabled: false
-
-overseerr:
-  enabled: false
-  persistence:
-    config:
-      enabled: false
+      enabled: true
+      type: configMap
+      name: prowlarr-configxml
+      advancedMounts:
+        main:
+          main:
+          - path: /config/config.xml
+            readOnly: false
+            subPath: config.xml

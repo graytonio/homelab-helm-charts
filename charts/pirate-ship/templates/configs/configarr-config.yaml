@@ -1,0 +1,21 @@
+{{- define "config.configarr" }}
+services:
+{{- if .Values.radarr.controllers.main.enabled }}
+  - name: radarr
+    address: {{ .Release.Name }}-radarr.{{ .Release.Namespace }}.svc.cluster.local
+    port: {{ .Values.radarr.service.main.ports.http.port }}
+    config:
+      rootFolder:
+        - name: Movies
+          path: /media
+{{- end }}
+{{- if .Values.sonarr.controllers.main.enabled }}
+  - name: sonarr
+    address: {{ .Release.Name }}-sonarr.{{ .Release.Namespace }}.svc.cluster.local
+    port: {{ .Values.sonarr.service.main.ports.http.port }}
+    config:
+      rootFolder:
+        - name: Series
+          path: /media
+{{- end }}
+{{- end }}
