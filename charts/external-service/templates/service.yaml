@@ -1,0 +1,19 @@
+{{ if .Values.service.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-service-{{ .Release.Name }}
+  annotations:
+  {{- with .Values.service.annotations }}
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+  {{- with .Values.service.labels }}
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  ports:
+  - name: {{ .Values.port.name }}
+    port: {{ .Values.port.service }}
+    targetPort: {{ .Values.port.target }}
+{{ end }}

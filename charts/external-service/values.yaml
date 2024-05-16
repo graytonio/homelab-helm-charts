@@ -1,0 +1,18 @@
+ipAddress: 192.168.1.1
+port:
+  service: 80
+  target: 80
+  name: http
+
+service:
+  enabled: true
+  annotations: {}
+  labels: {}
+
+ingress:
+  enabled: false
+  ingressClassName: ""
+  host: myservice.example.com
+  tls: {}
+  annotations: {}
+  labels: {}
