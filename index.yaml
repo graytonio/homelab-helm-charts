@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   external-service:
   - apiVersion: v2
+    created: "2024-09-13T19:52:02.132516043Z"
+    description: Slim Chart for creating a K8S Service for external deployments
+    digest: 2e4de623c6d6eebb58f47389f0493361d8ea5e690c9cfd6794f30211e3bd7aaf
+    name: external-service
+    urls:
+    - https://github.com/graytonio/homelab-helm-charts/releases/download/external-service-1.0.1/external-service-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2024-05-16T00:06:29.873531182Z"
     description: Slim Chart for creating a K8S Service for external deployments
     digest: d220fc92b289c08e4ecbf1d514977af08ee30e77c4476cf9c2075ab41df69f1b
@@ -487,4 +495,4 @@ entries:
     urls:
     - https://github.com/graytonio/homelab-helm-charts/releases/download/transmission-1.0.0/transmission-1.0.0.tgz
     version: 1.0.0
-generated: "2024-05-16T00:06:29.873560617Z"
+generated: "2024-09-13T19:52:02.132704845Z"
