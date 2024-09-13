@@ -27,7 +27,7 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: homeassistant-external-service
+              name: external-service-{{ .Release.Name }}
               port:
-                name: http
+                name: {{ .Values.port.service }}
 {{ end }}
