@@ -13,6 +13,6 @@ ingress:
   enabled: false
   ingressClassName: ""
   host: myservice.example.com
-  tls: {}
+  tls: []
   annotations: {}
   labels: {}
