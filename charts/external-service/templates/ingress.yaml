@@ -29,5 +29,5 @@ spec:
             service:
               name: external-service-{{ .Release.Name }}
               port:
-                name: {{ .Values.port.service }}
+                name: {{ .Values.port.name }}
 {{ end }}
